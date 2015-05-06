@@ -7,7 +7,7 @@
 	<script src="app.js"></script>
 </head>
 
-<body ng-app="csc590FinalProject" ng-controller="photosController">
+<body ng-app="csc590FinalProject" ng-controller="photosController" [ng-strict-di="boolean"]>
 	
 	<h1>Flickr</h1>
 	
@@ -15,16 +15,13 @@
 		<thead>
 			<tr><th>Test</th></tr>
 		</thead>
-		<tbody>
-			
+		<tbody>		
 			<tr ng-repeat="photo in photosList">
 				<td>{{$index + 1}}</td>
-				<td>{{photo.test}}</td>
-				
+				<td>{{photo.test}}</td>	
 			</tr>
 		</tbody>
 	</table>
-	
 
 </body>
 </html>

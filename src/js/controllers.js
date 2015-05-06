@@ -1,5 +1,5 @@
-angular.module('csc590FinalProject.controllers', []).
-controller('photosController', function($scope) {
+angular.module('csc590FinalProject.controllers', [])
+.controller('photosController', ["$scope", function($scope) {
 	
 	$scope.photosList = [
 		{
@@ -10,4 +10,4 @@ controller('photosController', function($scope) {
 		}
 	];
 	
-});
+}]);
