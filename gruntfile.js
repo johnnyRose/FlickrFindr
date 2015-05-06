@@ -1,43 +1,65 @@
 module.exports = function(grunt) {
 
-  grunt.initConfig({
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-processhtml');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+
+	grunt.initConfig({
 	  
-    pkg: grunt.file.readJSON('package.json'),
-	
-    uglify: {
-      options: {
-        banner: '/*! John Rosewicz - <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
-      }
-    },
-	
-	concat: {
-		options: {
-			banner: '/*! John Rosewicz - <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+		pkg: grunt.file.readJSON('package.json'),
+		
+		uglify: {
+			dist: {
+				files: {			  
+					'build/app.js': [
+						'src/js/csc590FinalProject.js',
+						'src/js/controllers.js'				
+					]
+				}
+			}
 		},
-		dist: {
-			src: ['node_modules/angular/angular.min.js', 'build/<%= pkg.name %>.min.js'],
-			dest: 'build/<%= pkg.name %>.min.js',
+		
+		concat: {
+			dist: {
+				files: {
+					'dist/app.js': [
+						'node_modules/angular/angular.min.js',
+						'node_modules/angular-route/angular-route.min.js',
+						'build/app.js'
+					]
+				}
+			}
 		},
-	},
-	
-	connect: {
-		'dev-server': {
-			options: {
-				keepalive: true
+		
+		copy: {
+			dist: {
+				files: [
+					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' }
+				]
+			}
+		},
+		
+		processhtml: {
+			dist: {
+				files: [
+					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' }
+				]
+			}
+		},
+		
+		connect: {
+			'dev-server': {
+				options: {
+					keepalive: true
+				}
 			}
 		}
-	}
-	
-  });
+		
+	});
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-
-  grunt.registerTask('default', ['uglify', 'concat', 'connect:dev-server']);
+	grunt.registerTask('default', ['uglify:dist', 'concat:dist', 'copy:dist', 'processhtml:dist' ]);
+	grunt.registerTask('dev', ['uglify:dist', 'concat:dist', 'copy:dist', 'processhtml:dist', 'connect:dev-server' ]);
   
 };
