@@ -1,4 +1,5 @@
 angular.module('csc590FinalProject', [
-	'csc590FinalProject.controllers'
-	]
-);
+	'ngRoute',
+	'csc590FinalProject.controllers',
+	'csc590FinalProject.services'
+]);

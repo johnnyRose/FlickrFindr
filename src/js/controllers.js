@@ -1,13 +1,12 @@
 angular.module('csc590FinalProject.controllers', [])
-.controller('photosController', ["$scope", function($scope) {
+.controller('photosController', ["$scope", "flickrService", function($scope, flickrService) {
 	
-	$scope.photosList = [
-		{
-			test: 1
-		},
-		{
-			test: 2
-		}
-	];
+	$scope.photosList = [];
+	
+	window.jsonFlickrApi = function(response) {
+		$scope.photosList = response.photos.photo;
+	}
+	
+	flickrService.getPhotos();
 	
 }]);

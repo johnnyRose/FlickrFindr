@@ -4,24 +4,17 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Flickr App</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script src="app.js"></script>
 </head>
 
-<body ng-app="csc590FinalProject" ng-controller="photosController" [ng-strict-di="boolean"]>
+<body ng-app="csc590FinalProject" ng-controller="photosController">
 	
 	<h1>Flickr</h1>
 	
-	<table>
-		<thead>
-			<tr><th>Test</th></tr>
-		</thead>
-		<tbody>		
-			<tr ng-repeat="photo in photosList">
-				<td>{{$index + 1}}</td>
-				<td>{{photo.test}}</td>	
-			</tr>
-		</tbody>
-	</table>
+	<span ng-repeat="photo in photosList">
+		<img src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg" alt="{{title}}" />
+	</span>
 
 </body>
 </html>

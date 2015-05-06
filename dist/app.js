@@ -266,4 +266,4 @@ h=f[1];c.push(b[h]);c.push(f[2]||"");delete b[h]}});return c.join("")}var w=!1,p
 q.directive("ngView",v);q.directive("ngView",A);v.$inject=["$route","$anchorScroll","$animate"];A.$inject=["$compile","$controller","$route"]})(window,window.angular);
 //# sourceMappingURL=angular-route.min.js.map
 
-angular.module("csc590FinalProject",["csc590FinalProject.controllers"]),angular.module("csc590FinalProject.controllers",[]).controller("photosController",["$scope",function(a){a.photosList=[{test:1},{test:2}]}]);
+angular.module("csc590FinalProject",["ngRoute","csc590FinalProject.controllers","csc590FinalProject.services"]),angular.module("csc590FinalProject.services",[]).factory("flickrService",["$http",function(a){var b={};return b.getPhotos=function(){return a({method:"JSONP",url:"https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=85c26979a45e0709832bbe468f052256&per_page=500&format=json"})},b}]),angular.module("csc590FinalProject.controllers",[]).controller("photosController",["$scope","flickrService",function(a,b){a.photosList=[],window.jsonFlickrApi=function(b){a.photosList=b.photos.photo},b.getPhotos()}]);

@@ -15,7 +15,9 @@ module.exports = function(grunt) {
 				files: {			  
 					'build/app.js': [
 						'src/js/csc590FinalProject.js',
-						'src/js/controllers.js'				
+						'src/js/services.js',
+						'src/js/controllers.js',
+						'src/js/filters.js'
 					]
 				}
 			}
@@ -36,7 +38,8 @@ module.exports = function(grunt) {
 		copy: {
 			dist: {
 				files: [
-					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' }
+					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' }
 				]
 			}
 		},
