@@ -38,8 +38,10 @@ module.exports = function(grunt) {
 		copy: {
 			dist: {
 				files: [
-					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' },
-					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' }
+					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['partials/photos.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' }
 				]
 			}
 		},
@@ -47,7 +49,7 @@ module.exports = function(grunt) {
 		processhtml: {
 			dist: {
 				files: [
-					{ expand: true, src: ['csc590FinalProject.html'], dest: 'dist/', cwd: 'src' }
+					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' }
 				]
 			}
 		},

@@ -9,4 +9,10 @@ angular.module('csc590FinalProject.controllers', [])
 	
 	flickrService.getPhotos();
 	
+}])
+
+.controller('photoDetailsController', ["$scope", "$routeParams", function($scope, $routeParams) {
+	
+	$scope.routeParams = $routeParams;
+	
 }]);
