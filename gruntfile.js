@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {			  
-					'build/app.js': [
-						'src/js/csc590FinalProject.js',
+					'build/FlickrFindr.js': [
+						'src/js/FlickrFindr.js',
 						'src/js/services.js',
 						'src/js/controllers.js',
 						'src/js/filters.js'
@@ -26,10 +26,10 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				files: {
-					'dist/app.js': [
+					'dist/FlickrFindr.js': [
 						'node_modules/angular/angular.min.js',
 						'node_modules/angular-route/angular-route.min.js',
-						'build/app.js'
+						'build/FlickrFindr.js'
 					]
 				}
 			}

@@ -1,4 +1,4 @@
-angular.module('csc590FinalProject.controllers', [])
+angular.module('FlickrFindr.controllers', [])
 .controller('photosController', ["$scope", "flickrService", function($scope, flickrService) {
 	
 	$scope.photosList = [];
@@ -12,7 +12,5 @@ angular.module('csc590FinalProject.controllers', [])
 }])
 
 .controller('photoDetailsController', ["$scope", "$routeParams", function($scope, $routeParams) {
-	
 	$scope.routeParams = $routeParams;
-	
 }]);

@@ -1,4 +1,4 @@
-angular.module('csc590FinalProject.services', [])
+angular.module('FlickrFindr.services', [])
 .factory('flickrService', ["$http", function($http) {
 	
 	var flickrService = { };

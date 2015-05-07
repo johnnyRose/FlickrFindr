@@ -1,7 +1,7 @@
-angular.module('csc590FinalProject', [
+angular.module('FlickrFindr', [
 	'ngRoute',
-	'csc590FinalProject.controllers',
-	'csc590FinalProject.services'
+	'FlickrFindr.controllers',
+	'FlickrFindr.services'
 ])
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
