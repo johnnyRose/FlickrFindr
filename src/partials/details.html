@@ -1,3 +1,4 @@
 <h2>Details</h2>
 
-<img src="https://farm{{routeParams.farm}}.staticflickr.com/{{routeParams.server}}/{{routeParams.id}}_{{routeParams.secret}}.jpg" alt="" />
+<img ng-src="https://farm{{routeParams.farm}}.staticflickr.com/{{routeParams.server}}/{{routeParams.id}}_{{routeParams.secret}}.jpg" alt="image" ng-click="toggle(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)"/>
+	

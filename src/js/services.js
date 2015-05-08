@@ -6,7 +6,7 @@ angular.module('FlickrFindr.services', [])
 	flickrService.getPhotos = function() {
 		return $http({
 			method: 'JSONP',
-			url: 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=2d73c904cbee3e97e3e08376461710eb&per_page=500&format=json'
+			url: 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=2d73c904cbee3e97e3e08376461710eb&per_page=50&format=json'
 		});		
 	};
 	
