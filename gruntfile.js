@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 				files: [
 					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' },
-					{ expand: true, src: ['partials/photos.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['partials/explore.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' }
 				]
 			}

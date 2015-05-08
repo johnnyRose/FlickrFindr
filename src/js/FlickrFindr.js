@@ -5,7 +5,7 @@ angular.module('FlickrFindr', [
 ])
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
-		when('/', { templateUrl: 'partials/photos.html', controller: 'photosController' }).
+		when('/', { templateUrl: 'partials/explore.html', controller: 'photosController' }).
 		when('/:farm/:server/:id/:secret', { templateUrl: 'partials/details.html', controller: 'photoDetailsController' }).
 		otherwise({ redirectTo: '/' });
 }]);
