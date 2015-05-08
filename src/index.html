@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -14,20 +13,31 @@
 	<script src="js/filters.js"></script>
 	<!-- /build -->
 </head>
-
 <body ng-app="FlickrFindr" ng-controller="photosController">
-	
-	<nav>
-		<span>
-			<h1><a href="#/">FlickrFindr</a></h1>
-			<h2><a href="#/">Explore</a></h2>
-			<h2><a href="#/favorites">Favorites</a></h2>
-		</span>
-	</nav>
-	
-	
-	<ng-view></ng-view>
-	
-
+	<nav class="navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/" data-toggle="collapse" data-target=".navbar-collapse">FlickrFindr</a>
+            </div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#/" data-toggle="collapse" data-target=".navbar-collapse">Explore</a></li>
+					<li><a href="#/favorites" data-toggle="collapse" data-target=".navbar-collapse">Favorites</a></li>
+					<li><a href="#/about" data-toggle="collapse" data-target=".navbar-collapse">About</a></li>
+				</ul>
+			</div>
+        </div>
+    </nav>	
+	<div class="container body-content body-top-spacing">
+		<main>
+			<ng-view></ng-view>
+		</main>
+	</div>
 </body>
 </html>

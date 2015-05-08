@@ -8,5 +8,6 @@ angular.module('FlickrFindr', [
 		when('/', { templateUrl: 'partials/explore.html', controller: 'photosController' }).
 		when('/:farm/:server/:id/:secret', { templateUrl: 'partials/details.html', controller: 'photoDetailsController' }).
 		when('/favorites', { templateUrl: 'partials/favorites.html', controller: 'favoritesController' }).
+		when('/about', { templateUrl: 'partials/about.html' }).
 		otherwise({ redirectTo: '/' });
 }]);

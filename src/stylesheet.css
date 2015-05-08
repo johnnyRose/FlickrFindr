@@ -4,6 +4,11 @@ body {
 	color: #eee;
 }
 
+.body-top-spacing {
+	position: relative;
+	top: 50px;
+}
+
 a {
 	color: #00aaff;
 	text-decoration: none;
@@ -13,13 +18,15 @@ a:hover {
 	text-decoration: underline;
 }
 
-.thumbnail {
+.my-thumbnail {
 	-webkit-transition: 0.1s ease-out;
     -moz-transition: 0.1s ease-out;
 	transition: 0.1s ease-out;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
-.thumbnail:hover {
+.my-thumbnail:hover {
 	-webkit-transform: scale(1.2,1.2);
     -moz-transform:scale(1.2,1.2);
     -webkit-transition: 0.1s ease-out;

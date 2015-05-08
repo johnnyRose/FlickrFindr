@@ -39,6 +39,8 @@ module.exports = function(grunt) {
 					'dist/FlickrFindr.js': [
 						'node_modules/angular/angular.min.js',
 						'node_modules/angular-route/angular-route.min.js',
+						'node_modules/jquery/dist/jquery.min.js',
+						'node_modules/bootstrap/dist/js/bootstrap.min.js',
 						'build/FlickrFindr.js'
 					],
 					
@@ -56,7 +58,8 @@ module.exports = function(grunt) {
 					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/explore.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' },
-					{ expand: true, src: ['partials/favorites.html'], dest: 'dist/', cwd: 'src' }
+					{ expand: true, src: ['partials/favorites.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['partials/about.html'], dest: 'dist/', cwd: 'src' }
 				]
 			}
 		},
