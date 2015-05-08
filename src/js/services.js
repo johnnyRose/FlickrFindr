@@ -66,6 +66,10 @@ angular.module('FlickrFindr.services', [])
 	};
 	
 	localStorageManager.elementExists = function(f, s, i, sec) {
+		if (!window.localStorage.getItem('flickrFindrStorage')) {
+			window.localStorage.setItem('flickrFindrStorage', JSON.stringify({ saved: [] }));
+		}
+		
 		var favorites = JSON.parse(window.localStorage.getItem('flickrFindrStorage')).saved;
 		for (var x = 0; x < favorites.length; ++x) {
 			if (favorites[x].farm == f && favorites[x].server == s && favorites[x].id == i && favorites[x].secret == sec) {
