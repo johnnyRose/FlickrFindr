@@ -15,4 +15,11 @@ angular.module('FlickrFindr.controllers', [])
 		localStorageManager.getFlickrFindrStorage(f, s, i, sec);
 		localStorageManager.toggle();
 	};
+	$scope.elementExists = localStorageManager.elementExists;
+}])
+
+.controller('favoritesController', ["$scope", "urlGenerator", "localStorageManager", function($scope, urlGenerator, localStorageManager) {
+	$scope.favorites = localStorageManager.getAllFavorites();
+	$scope.thumbnailUrl = urlGenerator.getThumbnailUrl;
+	$scope.detailsUrl = urlGenerator.getDetailsUrl;
 }]);

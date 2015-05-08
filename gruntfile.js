@@ -41,7 +41,8 @@ module.exports = function(grunt) {
 					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/explore.html'], dest: 'dist/', cwd: 'src' },
-					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' }
+					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' },
+					{ expand: true, src: ['partials/favorites.html'], dest: 'dist/', cwd: 'src' }
 				]
 			}
 		},

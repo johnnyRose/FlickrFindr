@@ -36,6 +36,10 @@ angular.module('FlickrFindr.services', [])
 	
 	var localStorageManager = { };
 	
+	localStorageManager.getAllFavorites = function() {
+		return JSON.parse(window.localStorage.getItem('flickrFindrStorage')).saved || [];
+	}
+	
 	localStorageManager.getFlickrFindrStorage = function(f, s, i, sec) {
 		if (!window.localStorage.getItem('flickrFindrStorage')) {
 			window.localStorage.setItem('flickrFindrStorage', JSON.stringify({ saved: [] }));
@@ -57,6 +61,16 @@ angular.module('FlickrFindr.services', [])
 		}
 		return -1;
 	};
+	
+	localStorageManager.elementExists = function(f, s, i, sec) {
+		var favorites = JSON.parse(window.localStorage.getItem('flickrFindrStorage')).saved;
+		for (var x = 0; x < favorites.length; ++x) {
+			if (favorites[x].farm == f && favorites[x].server == s && favorites[x].id == i && favorites[x].secret == sec) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	localStorageManager.addElement = function() {
 		if (this.elementExistsAt() == -1) {
@@ -81,8 +95,6 @@ angular.module('FlickrFindr.services', [])
 		} else {
 			this.addElement();
 		}
-		
-		console.log(this.savedPhotos);
 	};
 	
 	return localStorageManager;

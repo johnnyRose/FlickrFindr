@@ -1,2 +1,11 @@
 <h2>Details</h2>
-<img ng-src="{{ fullImageUrl(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret) }}" alt="image" ng-click="toggle(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)"/>
+
+<img ng-src="{{ fullImageUrl(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret) }}" alt="image" class="full-image"/>
+
+<div ng-if="elementExists(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)">
+	<input type="button" value="Unfavorite" ng-click="toggle(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)"/>
+</div>
+
+<div ng-if="!elementExists(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)">
+	<input type="button" value="Favorite" ng-click="toggle(routeParams.farm, routeParams.server, routeParams.id, routeParams.secret)"/>
+</div>

@@ -7,5 +7,6 @@ angular.module('FlickrFindr', [
 	$routeProvider.
 		when('/', { templateUrl: 'partials/explore.html', controller: 'photosController' }).
 		when('/:farm/:server/:id/:secret', { templateUrl: 'partials/details.html', controller: 'photoDetailsController' }).
+		when('/favorites', { templateUrl: 'partials/favorites.html', controller: 'favoritesController' }).
 		otherwise({ redirectTo: '/' });
 }]);

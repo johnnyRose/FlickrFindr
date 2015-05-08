@@ -1,0 +1,3 @@
+<span ng-repeat="photo in favorites">
+	<a ng-href="{{ detailsUrl(photo.farm, photo.server, photo.id, photo.secret) }}"><img ng-src="{{ thumbnailUrl(photo.farm, photo.server, photo.id, photo.secret) }}" alt="{{ photo.title }}" class="thumbnail" /></a>
+</span>
