@@ -13,6 +13,25 @@ angular.module('FlickrFindr.services', [])
 	return flickrService;
 }])
 
+.factory('urlGenerator', [function() {
+	
+	var urlGenerator = { };
+	
+	urlGenerator.getThumbnailUrl = function(farm, server, id, secret) {
+		return "https://farm" + farm.toString() + ".staticflickr.com/" + server.toString() + "/" + id.toString() + "_" + secret + "_q.jpg";
+	};
+	
+	urlGenerator.getFullImageUrl = function(farm, server, id, secret) {
+		return "https://farm" + farm.toString() + ".staticflickr.com/" + server.toString() + "/" + id.toString() + "_" + secret + ".jpg";
+	};
+	
+	urlGenerator.getDetailsUrl = function(farm, server, id, secret) {
+		return "#/" + farm.toString() + "/" + server.toString() + "/" + id.toString() + "/" + secret;
+	};
+	
+	return urlGenerator;	
+}])
+
 .factory('localStorageManager', [function() {
 	
 	var localStorageManager = { };

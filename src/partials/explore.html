@@ -1,3 +1,3 @@
 <span ng-repeat="photo in photosList">
-	<a ng-href="#/{{photo.farm}}/{{photo.server}}/{{photo.id}}/{{photo.secret}}"><img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg" alt="{{title}}" class="thumbnail" /></a>
+	<a ng-href="{{ detailsUrl(photo.farm, photo.server, photo.id, photo.secret) }}"><img ng-src="{{ thumbnailUrl(photo.farm, photo.server, photo.id, photo.secret) }}" alt="{{ photo.title }}" class="thumbnail" /></a>
 </span>
