@@ -17,8 +17,7 @@ module.exports = function(grunt) {
 					'build/FlickrFindr.js': [
 						'src/js/FlickrFindr.js',
 						'src/js/services.js',
-						'src/js/controllers.js',
-						'src/js/filters.js'
+						'src/js/controllers.js'
 					]
 				}
 			}
@@ -30,16 +29,16 @@ module.exports = function(grunt) {
 					'dist/FlickrFindr.css' : ['src/stylesheet.css']
 				}
 			}
-		},
-				
+		},		
 		
 		concat: {
 			dist: {
 				files: {
 					'dist/FlickrFindr.js': [
+						'node_modules/jquery/dist/jquery.min.js',
 						'node_modules/angular/angular.min.js',
 						'node_modules/angular-route/angular-route.min.js',
-						'node_modules/jquery/dist/jquery.min.js',
+						'src/js/ngInfiniteScroll.js',
 						'node_modules/bootstrap/dist/js/bootstrap.min.js',
 						'build/FlickrFindr.js'
 					],

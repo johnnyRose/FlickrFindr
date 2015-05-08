@@ -3,10 +3,13 @@ angular.module('FlickrFindr.services', [])
 	
 	var flickrService = { };
 	
+	window.pageNumber = 0;
+	
 	flickrService.getPhotos = function() {
+		++window.pageNumber;
 		return $http({
 			method: 'JSONP',
-			url: 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=2d73c904cbee3e97e3e08376461710eb&per_page=50&format=json'
+			url: 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=2d73c904cbee3e97e3e08376461710eb&page=' + window.pageNumber + '&per_page=50&format=json'
 		});		
 	};
 	

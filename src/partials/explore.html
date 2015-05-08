@@ -1,3 +1,5 @@
-<span ng-repeat="photo in photosList">
-	<a ng-href="{{ detailsUrl(photo.farm, photo.server, photo.id, photo.secret) }}"><img ng-src="{{ thumbnailUrl(photo.farm, photo.server, photo.id, photo.secret) }}" alt="{{ photo.title }}" class="my-thumbnail" /></a>
-</span>
+<div infinite-scroll="getPhotos()" infinite-scroll-distance="2">
+	<span ng-repeat="photo in photosList">
+		<a ng-href="{{ detailsUrl(photo.farm, photo.server, photo.id, photo.secret) }}"><img ng-src="{{ thumbnailUrl(photo.farm, photo.server, photo.id, photo.secret) }}" alt="{{ photo.title }}" class="my-thumbnail" /></a>
+	</span>
+</div>

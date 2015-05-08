@@ -1,5 +1,6 @@
 angular.module('FlickrFindr', [
 	'ngRoute',
+	'infinite-scroll',
 	'FlickrFindr.controllers',
 	'FlickrFindr.services'
 ])
