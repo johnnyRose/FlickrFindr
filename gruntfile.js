@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-processhtml');
@@ -23,6 +24,15 @@ module.exports = function(grunt) {
 			}
 		},
 		
+		cssmin: {
+			dist: {
+				files: {
+					'dist/FlickrFindr.css' : ['src/stylesheet.css']
+				}
+			}
+		},
+				
+		
 		concat: {
 			dist: {
 				files: {
@@ -30,6 +40,11 @@ module.exports = function(grunt) {
 						'node_modules/angular/angular.min.js',
 						'node_modules/angular-route/angular-route.min.js',
 						'build/FlickrFindr.js'
+					],
+					
+					'dist/FlickrFindr.css' : [
+						'node_modules/bootstrap/dist/css/bootstrap.min.css',
+						'dist/FlickrFindr.css'
 					]
 				}
 			}
@@ -39,7 +54,6 @@ module.exports = function(grunt) {
 			dist: {
 				files: [
 					{ expand: true, src: ['index.html'], dest: 'dist/', cwd: 'src' },
-					{ expand: true, src: ['stylesheet.css'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/explore.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/details.html'], dest: 'dist/', cwd: 'src' },
 					{ expand: true, src: ['partials/favorites.html'], dest: 'dist/', cwd: 'src' }
@@ -65,7 +79,7 @@ module.exports = function(grunt) {
 		
 	});
 
-	grunt.registerTask('default', ['uglify:dist', 'concat:dist', 'copy:dist', 'processhtml:dist' ]);
-	grunt.registerTask('dev', ['uglify:dist', 'concat:dist', 'copy:dist', 'processhtml:dist', 'connect:dev-server' ]);
+	grunt.registerTask('default', ['uglify:dist', 'cssmin:dist', 'concat:dist', 'copy:dist', 'processhtml:dist' ]);
+	grunt.registerTask('dev', ['uglify:dist', 'cssmin:dist', 'concat:dist', 'copy:dist', 'processhtml:dist', 'connect:dev-server' ]);
   
 };
